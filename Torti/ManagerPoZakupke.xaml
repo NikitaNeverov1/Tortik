@@ -1,0 +1,155 @@
+﻿<Window x:Class="Torti.ManagerPoZakupke"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Torti"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="managerPoZakupke" Height="800" Width="1000">
+    <Grid Background="#ffd77f" >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--лого компании-->
+        <Image 
+            Source="Logo_Monochrome.png"
+            Grid.Column="1"
+            Grid.Row="0"
+            Grid.RowSpan="2" 
+            Grid.ColumnSpan="2" />
+
+        <!--компания-->
+        <TextBlock 
+            Text="Cake production"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            FontSize="18" 
+            FontFamily="Comic Sans MS"
+            Grid.ColumnSpan="10" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"/>
+
+        <Button 
+            Click="DelUkrClick"
+            Background="White"
+            Grid.Row="3"
+            Grid.ColumnSpan="4"
+            Grid.Column="6"
+            VerticalAlignment="Center" 
+            Margin="84,10,10,63">
+            <TextBlock 
+                Text=" Удалить из списка украшения для тортов"
+                FontSize="14"
+                FontFamily="Comic Sans MS"
+                Width="281"
+                ></TextBlock>
+        </Button>
+
+        <!-- кнопка возращении в главное меню -->
+        <Button 
+            Click="OutClick" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Grid.Column="8" 
+            Background= "White" 
+            Margin="39,25,23,20" 
+            Grid.Row="7" 
+            Grid.ColumnSpan="2" 
+            Width="76" Height="26" >
+            <TextBlock 
+                Text="Выход"
+                FontSize="15" 
+                FontFamily="Comic Sans MS"
+            ></TextBlock>
+
+        </Button>
+
+        <!--таблица-->
+        <DataGrid  
+            Background="#e1dddb"
+            Name="DataBase"
+            Grid.Row="2" 
+            Grid.ColumnSpan="7" 
+            Grid.RowSpan="6" 
+            Margin="0,0,33,32"
+            ></DataGrid>
+
+        <!--база данных украшения для тортов-->
+        <Button 
+            Click="UkrasheniyaClick" 
+            Grid.Column="6" 
+            Grid.Row="2"
+            Grid.ColumnSpan="4"
+            VerticalAlignment="Center"
+            Background="White" 
+            Margin="84,72,10,0">
+            <TextBlock 
+                Text="Вывести список украшения для тортов"
+                FontSize="15" 
+                FontFamily="Comic Sans MS"></TextBlock>
+        </Button>
+
+        <!--база данных ингридиенты-->
+        <Button 
+            Click="IngredientyClick"
+            Grid.Column="6" 
+            Grid.Row="4" 
+            Grid.ColumnSpan="4" 
+            VerticalAlignment="Center"
+            Background="White" 
+            Margin="84,71,10,0">
+            <TextBlock
+                FontSize="15" 
+                FontFamily="Comic Sans MS" 
+                Text="Вывести список ингридиентов" 
+                Width="223" 
+                RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.006"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+        </Button>
+
+        <!--кнопка удаления из списка ингридиентов-->
+        <Button 
+            Click="DelIngClick"
+            Background="White" 
+            Grid.Row="5" 
+            Grid.ColumnSpan="4"
+            Grid.Column="6" 
+            VerticalAlignment="Center" Margin="84,10,10,61" Height="26" >
+            <TextBlock 
+                Text="Удалить из списка ингридиентов"
+                FontSize="15" 
+                FontFamily="Comic Sans MS"
+                ></TextBlock>
+        </Button>
+    </Grid>
+</Window>

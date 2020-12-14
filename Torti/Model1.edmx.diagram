@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6229a66c5b454ab28a465345eb274ef2" Name="Diagram1">
+        <EntityTypeShape EntityType="TortModel.Ingredienty" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Instruments" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Izdelie" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Oborudovanie" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Polzovatel" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Postavshik" Width="1.5" PointX="1.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Specific_ingredienty" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Specific_operation" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Specific_PFabricat" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Specific_tort_decoration" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Tort_decoration" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Type_oborudovanie" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TortModel.Zakaz" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="TortModel.FK__Ingridien__Main___276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__Spec_infr__Ingre__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__operation__Produ__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__order__Product__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__Spec_cake__Produ__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__Spec_infr__Produ__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__Spec_SFPr__Produ__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__Spec_SFPr__SFPro__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__Equipment__Equip__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__order__Manager__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__order__User__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__cake_deco__Main___286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__operation__Equii__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="TortModel.FK__Spec_cake__Cake___02FC7413" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

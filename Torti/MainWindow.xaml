@@ -1,0 +1,131 @@
+﻿<Window x:Class="Torti.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Torti"
+        mc:Ignorable="d"
+         Title="Cake Production" Height="600" Width="700">
+    <Grid Background="#ffd77f">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Image 
+            Grid.Row="1"  
+            Source="Logo_Monochrome.png" 
+            Grid.RowSpan="2" 
+            Grid.Column="4" 
+            Grid.ColumnSpan="2" ></Image>
+
+        <TextBlock 
+            Text="Cake production"
+            Grid.ColumnSpan="10" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            FontSize="18" 
+            FontFamily="Comic Sans MS"/>
+
+        <Button 
+            Click="LogIn_click"
+            FontFamily="Comic Sans MS"
+            FontWeight="Bold"
+            FontSize="15"
+            Background="White" 
+            Grid.Column="3" 
+            Grid.Row="5"
+            Grid.ColumnSpan="3"  
+            HorizontalContentAlignment="Center" 
+            VerticalAlignment="Top" Margin="69,0,0,0" Height="35">Войти</Button>
+
+        <Button 
+            FontSize="15" 
+            FontFamily="Comic Sans MS"
+            Click="Registr_click"
+            FontWeight="Bold"
+            Background="White" 
+            Grid.Column="4"
+            VerticalAlignment="Top"  
+            Grid.Row="6" 
+            Grid.ColumnSpan="2" Margin="0,26,0,0" Height="35" >
+            <TextBlock Text="Регистрация"/>
+        </Button>
+
+        <TextBlock
+            Text="Введите логин:" 
+            FontWeight="Bold"
+            FontSize="15" 
+            FontFamily="Comic Sans MS"
+            Grid.ColumnSpan="3" 
+            Grid.Column="3" 
+            Grid.Row="3" Margin="39,5,43,43"/>
+
+        <TextBlock
+            Text="Введите пароль:" 
+            FontWeight="Bold"
+            FontSize="15" 
+            FontFamily="Comic Sans MS"
+            Grid.ColumnSpan="3" 
+            Grid.Column="3" 
+            Grid.Row="4" Margin="39,4,43,43"/>
+
+        <TextBox 
+            FontFamily="Comic Sans MS"
+            FontSize="15"
+            Name="txtLogin"
+            VerticalAlignment="Center" 
+            Grid.Column="3" 
+            Grid.Row="3"
+            Background="White"
+            Grid.ColumnSpan="4" Height="28" Margin="39,33,41,10"
+            ></TextBox>
+
+        <PasswordBox
+            FontFamily="Comic Sans MS"
+            FontSize="15"
+            Name="txtPassword" 
+            VerticalAlignment="Center" 
+            Grid.ColumnSpan="4" 
+            Grid.Row="4" 
+            Grid.Column="3" 
+            Background="White" Margin="39,33,41,10" Height="28"
+           ></PasswordBox>
+
+        <TextBlock 
+            Text="Нет учетной записи? Создайте ее!"
+            FontSize="15" 
+            FontFamily="Comic Sans MS"
+            HorizontalAlignment="Center"
+            Grid.Row="5"
+            Grid.Column="3" 
+            Grid.ColumnSpan="4"
+            VerticalAlignment="Center" 
+            Margin="18,66,10,50" Width="250"
+            Background="White"
+            Height="26" 
+            Grid.RowSpan="2"/>
+    </Grid>
+</Window>

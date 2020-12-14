@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище TortModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ingredienty">
+    <Key>
+      <PropertyRef Name="Arctikul" />
+    </Key>
+    <Property Name="Arctikul" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edinitsa izmereniya" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Main_postavshik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="GOST" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fasovka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Characteristic" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Instruments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stepen Iznosa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Postavshik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Izdelie">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Oborudovanie">
+    <Key>
+      <PropertyRef Name="Label" />
+    </Key>
+    <Property Name="Label" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type_oborudovanie" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Characteristics" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Polzovatel">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="First_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Postavshik">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date_of_delivery" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Specific_ingredienty">
+    <Key>
+      <PropertyRef Name="Product" />
+      <PropertyRef Name="Ingredient" />
+    </Key>
+    <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ingredient" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Specific_operation">
+    <Key>
+      <PropertyRef Name="Product" />
+      <PropertyRef Name="Operation" />
+      <PropertyRef Name="Poryadkovyy nomer" />
+    </Key>
+    <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Poryadkovyy nomer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oborudovanie_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vremya na operatsiyu" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Specific_PFabricat">
+    <Key>
+      <PropertyRef Name="Product" />
+      <PropertyRef Name="PFabricat" />
+    </Key>
+    <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PFabricat" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Specific_tort_decoration">
+    <Key>
+      <PropertyRef Name="Product" />
+      <PropertyRef Name="Tort_decoration" />
+    </Key>
+    <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tort_decoration" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tort_decoration">
+    <Key>
+      <PropertyRef Name="Arctikul" />
+    </Key>
+    <Property Name="Arctikul" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edinitsa izmereniya" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Main_postavshik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ves" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Type_oborudovanie">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zakaz">
+    <Key>
+      <PropertyRef Name="Number" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="Number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="Name zakaz" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Zakazchik" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Plan_data_zaver" Type="smalldatetime" />
+    <Property Name="Primery rabot" Type="image" />
+  </EntityType>
+  <Association Name="FK__cake_deco__Main___286302EC">
+    <End Role="Postavshik" Type="Self.Postavshik" Multiplicity="0..1" />
+    <End Role="Tort_decoration" Type="Self.Tort_decoration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postavshik">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Tort_decoration">
+        <PropertyRef Name="Main_postavshik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Equip__07C12930">
+    <End Role="Type_oborudovanie" Type="Self.Type_oborudovanie" Multiplicity="1" />
+    <End Role="Oborudovanie" Type="Self.Oborudovanie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_oborudovanie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Oborudovanie">
+        <PropertyRef Name="Type_oborudovanie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingridien__Main___276EDEB3">
+    <End Role="Postavshik" Type="Self.Postavshik" Multiplicity="0..1" />
+    <End Role="Ingredienty" Type="Self.Ingredienty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postavshik">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Ingredienty">
+        <PropertyRef Name="Main_postavshik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__operation__Equii__0F624AF8">
+    <End Role="Type_oborudovanie" Type="Self.Type_oborudovanie" Multiplicity="0..1" />
+    <End Role="Specific_operation" Type="Self.Specific_operation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_oborudovanie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Specific_operation">
+        <PropertyRef Name="Oborudovanie_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__operation__Produ__0E6E26BF">
+    <End Role="Izdelie" Type="Self.Izdelie" Multiplicity="1" />
+    <End Role="Specific_operation" Type="Self.Specific_operation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdelie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Specific_operation">
+        <PropertyRef Name="Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order__Manager__778AC167">
+    <End Role="Polzovatel" Type="Self.Polzovatel" Multiplicity="0..1" />
+    <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Polzovatel">
+        <PropertyRef Name="Login" />
+      </Principal>
+      <Dependent Role="Zakaz">
+        <PropertyRef Name="Manager" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order__Product__75A278F5">
+    <End Role="Izdelie" Type="Self.Izdelie" Multiplicity="1" />
+    <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdelie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Zakaz">
+        <PropertyRef Name="Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order__User__76969D2E">
+    <End Role="Polzovatel" Type="Self.Polzovatel" Multiplicity="1" />
+    <End Role="Zakaz" Type="Self.Zakaz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Polzovatel">
+        <PropertyRef Name="Login" />
+      </Principal>
+      <Dependent Role="Zakaz">
+        <PropertyRef Name="Zakazchik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spec_cake__Cake___02FC7413">
+    <End Role="Tort_decoration" Type="Self.Tort_decoration" Multiplicity="1" />
+    <End Role="Specific_tort_decoration" Type="Self.Specific_tort_decoration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tort_decoration">
+        <PropertyRef Name="Arctikul" />
+      </Principal>
+      <Dependent Role="Specific_tort_decoration">
+        <PropertyRef Name="Tort_decoration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spec_cake__Produ__02084FDA">
+    <End Role="Izdelie" Type="Self.Izdelie" Multiplicity="1" />
+    <End Role="Specific_tort_decoration" Type="Self.Specific_tort_decoration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdelie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Specific_tort_decoration">
+        <PropertyRef Name="Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spec_infr__Ingre__7F2BE32F">
+    <End Role="Ingredienty" Type="Self.Ingredienty" Multiplicity="1" />
+    <End Role="Specific_ingredienty" Type="Self.Specific_ingredienty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredienty">
+        <PropertyRef Name="Arctikul" />
+      </Principal>
+      <Dependent Role="Specific_ingredienty">
+        <PropertyRef Name="Ingredient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spec_infr__Produ__7E37BEF6">
+    <End Role="Izdelie" Type="Self.Izdelie" Multiplicity="1" />
+    <End Role="Specific_ingredienty" Type="Self.Specific_ingredienty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdelie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Specific_ingredienty">
+        <PropertyRef Name="Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spec_SFPr__Produ__6FE99F9F">
+    <End Role="Izdelie" Type="Self.Izdelie" Multiplicity="1" />
+    <End Role="Specific_PFabricat" Type="Self.Specific_PFabricat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdelie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Specific_PFabricat">
+        <PropertyRef Name="Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spec_SFPr__SFPro__70DDC3D8">
+    <End Role="Izdelie" Type="Self.Izdelie" Multiplicity="1" />
+    <End Role="Specific_PFabricat" Type="Self.Specific_PFabricat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Izdelie">
+        <PropertyRef Name="Name" />
+      </Principal>
+      <Dependent Role="Specific_PFabricat">
+        <PropertyRef Name="PFabricat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище TortModelContainer">
+    <EntitySet Name="Ingredienty" EntityType="Self.Ingredienty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Instruments" EntityType="Self.Instruments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Izdelie" EntityType="Self.Izdelie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Oborudovanie" EntityType="Self.Oborudovanie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Polzovatel" EntityType="Self.Polzovatel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Postavshik" EntityType="Self.Postavshik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specific_ingredienty" EntityType="Self.Specific_ingredienty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specific_operation" EntityType="Self.Specific_operation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specific_PFabricat" EntityType="Self.Specific_PFabricat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specific_tort_decoration" EntityType="Self.Specific_tort_decoration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tort_decoration" EntityType="Self.Tort_decoration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type_oborudovanie" EntityType="Self.Type_oborudovanie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zakaz" EntityType="Self.Zakaz" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__cake_deco__Main___286302EC" Association="Self.FK__cake_deco__Main___286302EC">
+      <End Role="Postavshik" EntitySet="Postavshik" />
+      <End Role="Tort_decoration" EntitySet="Tort_decoration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Equip__07C12930" Association="Self.FK__Equipment__Equip__07C12930">
+      <End Role="Type_oborudovanie" EntitySet="Type_oborudovanie" />
+      <End Role="Oborudovanie" EntitySet="Oborudovanie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingridien__Main___276EDEB3" Association="Self.FK__Ingridien__Main___276EDEB3">
+      <End Role="Postavshik" EntitySet="Postavshik" />
+      <End Role="Ingredienty" EntitySet="Ingredienty" />
+    </AssociationSet>
+    <AssociationSet Name="FK__operation__Equii__0F624AF8" Association="Self.FK__operation__Equii__0F624AF8">
+      <End Role="Type_oborudovanie" EntitySet="Type_oborudovanie" />
+      <End Role="Specific_operation" EntitySet="Specific_operation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__operation__Produ__0E6E26BF" Association="Self.FK__operation__Produ__0E6E26BF">
+      <End Role="Izdelie" EntitySet="Izdelie" />
+      <End Role="Specific_operation" EntitySet="Specific_operation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order__Manager__778AC167" Association="Self.FK__order__Manager__778AC167">
+      <End Role="Polzovatel" EntitySet="Polzovatel" />
+      <End Role="Zakaz" EntitySet="Zakaz" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order__Product__75A278F5" Association="Self.FK__order__Product__75A278F5">
+      <End Role="Izdelie" EntitySet="Izdelie" />
+      <End Role="Zakaz" EntitySet="Zakaz" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order__User__76969D2E" Association="Self.FK__order__User__76969D2E">
+      <End Role="Polzovatel" EntitySet="Polzovatel" />
+      <End Role="Zakaz" EntitySet="Zakaz" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spec_cake__Cake___02FC7413" Association="Self.FK__Spec_cake__Cake___02FC7413">
+      <End Role="Tort_decoration" EntitySet="Tort_decoration" />
+      <End Role="Specific_tort_decoration" EntitySet="Specific_tort_decoration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spec_cake__Produ__02084FDA" Association="Self.FK__Spec_cake__Produ__02084FDA">
+      <End Role="Izdelie" EntitySet="Izdelie" />
+      <End Role="Specific_tort_decoration" EntitySet="Specific_tort_decoration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spec_infr__Ingre__7F2BE32F" Association="Self.FK__Spec_infr__Ingre__7F2BE32F">
+      <End Role="Ingredienty" EntitySet="Ingredienty" />
+      <End Role="Specific_ingredienty" EntitySet="Specific_ingredienty" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spec_infr__Produ__7E37BEF6" Association="Self.FK__Spec_infr__Produ__7E37BEF6">
+      <End Role="Izdelie" EntitySet="Izdelie" />
+      <End Role="Specific_ingredienty" EntitySet="Specific_ingredienty" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spec_SFPr__Produ__6FE99F9F" Association="Self.FK__Spec_SFPr__Produ__6FE99F9F">
+      <End Role="Izdelie" EntitySet="Izdelie" />
+      <End Role="Specific_PFabricat" EntitySet="Specific_PFabricat" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spec_SFPr__SFPro__70DDC3D8" Association="Self.FK__Spec_SFPr__SFPro__70DDC3D8">
+      <End Role="Izdelie" EntitySet="Izdelie" />
+      <End Role="Specific_PFabricat" EntitySet="Specific_PFabricat" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
